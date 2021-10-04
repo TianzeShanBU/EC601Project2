@@ -1,0 +1,22 @@
+MVP: Inputing a name of a location, the system will return at most 50 top trends name with average and variance sentimental score of each.
+
+User story: 
+As a journalist, I want know hot topics and public attitudes of each topic so that I can write articles attracting audience.
+As a public security department of certain area, I want to know what topic is the most contenious by looking at variance so that I can deploy more police for it.
+As a basic user of twitter, I want to have a filter function of sentimental score to sort trends.
+
+Modular design：
+Input module: 
+input a string of location name.
+Compute module: 
+1. convert the location name to a WOEID.
+2. use API.get_place_trends(id *, exclude) to get name of trends.
+3. use API.search() to get most recent 500 results
+4. use NLP sentiment analysis to get score for each and compute average and variance.
+Output module:
+print out [topic name, average sentiment score, variance]
+
+
+
+
+
